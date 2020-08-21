@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <link rel="stylesheet" type="text/css" href="dist/device-mockups.min.css">
+    <link rel="stylesheet" href="./lib/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="./lib/onsenui/css/onsen-css-components.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <script src="./lib/onsenui/js/onsenui.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>COVID-19 Tracker</title>
+</head>
+
+<body>
+
+    <div class="device-wrapper">
+        <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
+            <div class="screen">
+
+
+                <ons-tabbar swipeable position="bottom">
+                    <ons-tab page="first-template" label="Home" icon="fa-home" active>
+                    </ons-tab>
+
+                    <ons-tab page="pref-template" label="Preferences" icon="fa-cog">
+                    </ons-tab>
+                </ons-tabbar>
+                </ons-page>
+                <template id="first-template">
+        <ons-page id="first-page">
+                <div class="content content-container">
+                   
+                    <div span id="titletext">Dashboard</div>
+                        <div class="country-top">
+                            <i class="fas fa-flag" style="color:#fff;"></i>
+                            <div span id="msgSpace">Country</div>
+                            <a href="#" class="refresh-btn"onclick="checkPref()">
+                                <i class="fas fa-sync-alt"  style="color:#fff; padding-right: 10px;"></i>
+                                
+                                <i class="fas fa-exclamation-circle" style="color:#FF2D6A;" ></i>  
+                            </a>
+
+                        </div>
+
+                    <div class="container">
+
+                        <div class="todo__container">
+                
+                            <div class="todosec1 todo--finished">
+                                <i class="fas fa-user-friends" style="color:#892DFE; font-size: 20px;"></i>
+                                <p class="todo__link">Total Cases</p>
+                                <h2 class="todo__amount content" id="home-totalConfirmed">0</h2>
+                                
+                            </div>
+
+                            <div class="todosec todo--finished">
+                                <i class="fas fa-skull" style="color:#37EC8F; font-size: 20px;"></i>
+                                <p class="todo__link">Total Deaths</p>
+                                <h2 class="todo__amount" id="home-totalDeaths">0</h2>
+                                
+                            </div>
+
+                            <div class="todosec1 todo--finished">
+                                <i class="fas fa-ambulance" style="color:#3D85FE; font-size: 20px;"></i>
+                                <p class="todo__link">New Deaths</p>
+                                <h2 class="todo__amount" id="home-newDeaths">0</h2>
+                                
+                            </div>
+
+                            <div class="todosec todo--finished">
+                                <i class="fas fa-temperature-high" style="color:#FF545A; font-size: 20px;"></i>
+                                <p class="todo__link">New Confirmed</p>
+                                <h2 class="todo__amount" id="home-newConfirmed">0</h2>
+                                
+                            </div>
+
+                            <div class="todomain todo--finished">
+                                <i class="fas fa-user-nurse" style="color:#FFf; font-size: 26px;"></i>
+                                <h2 class="todo__amountc"id="home-totalRecovered" >0</h2>
+                                <p class="todo__linkc"> Total <br>Recovered</p>
+                            </div>
+                            <div class="todomain2 todo--finished">
+                                <i class="fas fa-hospital" style="color:#FFf; font-size: 26px;"></i>
+                                <h2 class="todo__amountc"id="home-newRecovered" >0</h2>
+                                <p class="todo__linkc"> New <br>Recovered</p>
+                            </div>
+            
+                            
+                        </div>
+                        
+                
+                    </div>
+   
+                
+                </div>
+
+        </ons-page>
+    </template>
+
+                <template id="pref-template">
+        <ons-page id="pref-page">
+                
+            <div class="content content-container pref-container">
+                
+                <div span id="titletext" style="margin-left: -20px;">Preferences</div>
+                <img src="img/undraw.svg" style="width: 275px;  display: block; margin-left: auto; margin-right: auto; width: 90%; padding: 90px 0;" alt="">
+                <div class="btn-space">
+                <div class="form-group">
+               
+                    <div><ons-input autocapitalize="words" input-id="country" class="form-field-full" placeholder="Enter country name" modifier="underbar" id="desiredCountry"></ons-input></div>
+                </div>
+
+                    <!-- <ons-button class="btn-link1" onclick="savePref()">Update</ons-button>
+                    <ons-button class="btn-link2" onclick="clearPref()">Clear</ons-button> -->
+                    <button class="btn-link1" onclick="savePref()">Update</button>
+                    <button  class="btn-link2" onclick="clearPref()">Clear</button>
+                </div>
+            </div>
+
+        </ons-page>
+    </template>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="js/listModal.js"></script>
+    <script type="text/javascript" src="js/covid-id.js"></script>
+    <script type="text/javascript" src="js/userPref.js"></script>
+    <script type="text/javascript" src="js/covid.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+
+    <script>
+        // since we are using tabs we can just set the home button universally
+
+
+        document.addEventListener('init', function(event) {
+            // get a reference to the element (page that fired the init event)
+            var page = event.target;
+
+            if (page.id === 'pref-page') {
+                setPrefFields();
+            }
+
+        });
+
+        function checkPref() {
+
+            var firstPage = document.getElementById('first-page');
+            var currPref = window.localStorage.getItem('userPref');
+
+
+
+
+
+
+            if (currPref !== null) {
+                var selectCountry = JSON.parse(currPref).country;
+                firstPage.querySelector('#msgSpace').innerHTML = selectCountry;
+                getpref(selectCountry);
+            } else {
+                firstPage.querySelector('#msgSpace').innerHTML = "No preferences in LocalStorage";
+                document.querySelector(
+                    "#home-totalConfirmed"
+                ).innerHTML = "";
+                document.querySelector("#home-totalDeaths").innerHTML = "";
+                document.querySelector(
+                    "#home-totalRecovered"
+                ).innerHTML = "";
+                document.querySelector(
+                    "#home-newConfirmed"
+                ).innerHTML = "";
+                document.querySelector("#home-newDeaths").innerHTML = "";
+                document.querySelector(
+                    "#home-newRecovered"
+                ).innerHTML = "";
+                document.querySelector("#home-date").innerHTML = "";
+            }
+        }
+
+        function savePref() {
+            var prefPage = document.getElementById('pref-page');
+
+            var currPref = {
+                country: prefPage.querySelector('#country').value
+            };
+
+            // iterate over interests
+            var interestSwitches = prefPage.querySelectorAll('.int-switch');
+            for (let i = 0; i < interestSwitches.length; i++) {
+
+                currPref.interests.push({
+                    fieldId: interestSwitches[i].getAttribute('input-id'),
+                    fieldVal: interestSwitches[i].checked
+                });
+            }
+
+            window.localStorage.setItem('userPref', JSON.stringify(currPref));
+        }
+
+        function clearPref() {
+            window.localStorage.removeItem('userPref');
+            document.getElementById('desiredCountry').value = "";
+        }
+
+        function setPrefFields() {
+            // get the stored values if they exist                
+            var currPrefObj = window.localStorage.getItem('userPref');
+
+            if (currPrefObj !== null) {
+                // since we want them as an object we will parse
+                currPrefObj = JSON.parse(currPrefObj);
+
+                var prefPage = document.getElementById('pref-page');
+
+                // normally we'd set defaults for null values here but we'll keep it simple
+                prefPage.querySelector('#country').value = currPrefObj.country;
+
+
+                // for (let i = 0; i < currPrefObj.interests.length; i++) {
+                //     prefPage.querySelector('#' + currPrefObj.interests[i].fieldId).checked =
+                //         currPrefObj.interests[i].fieldVal;
+                // }
+
+            }
+        }
+    </script>
+</body>
+
+</html>

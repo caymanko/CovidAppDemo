@@ -1,0 +1,533 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap') * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;
+    /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;
+    /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;
+    /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color: #e4e4e4;
+    background-image: linear-gradient(top, #a7a7a7 0%, #e4e4e4 51%);
+    font-family: system-ui, -apple-system, -apple-system-font, 'Poppins', sans-serif;
+    font-size: 12px;
+    height: 100vh;
+    padding: 0px;
+    /* Padding to avoid the "unsafe" areas behind notches in the screen */
+    /* padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-right, 0px);
+    text-transform: uppercase;
+    width: 100%; */
+    overflow: scroll;
+}
+
+button {
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+}
+
+button:hover {
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+}
+
+button:active {
+    outline: none;
+    border: none;
+}
+
+button:focus {
+    outline: 0;
+}
+
+h1 {
+    font-family: system-ui, -apple-system, -apple-system-font, 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0px;
+    overflow: visible;
+    padding: 0px;
+    text-align: center;
+}
+
+.btn-link1 {
+    background: rgb(20, 208, 131);
+    background: linear-gradient(53deg, rgba(20, 208, 131, 1) 0%, rgba(62, 240, 142, 1) 100%);
+    border-radius: 10px;
+    padding: 5px 30px 5px 30px;
+    margin: 0 14px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    text-transform: initial;
+    color: white;
+    transition-duration: 0.4s;
+}
+
+.btn-link2 {
+    background: transparent;
+    border-radius: 10px;
+    padding: 5px 30px 5px 30px;
+    margin: 0 14px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    text-transform: initial;
+    color: white;
+    transition-duration: 0.4s;
+}
+
+.btn-link1:active {
+    opacity: 0.5;
+    transition: 0s
+}
+
+.btn-link2:active {
+    opacity: 0.5;
+    transition: 0s
+}
+
+ons-input.pref-input {
+    padding-bottom: 30px;
+    border-bottom: red;
+}
+
+.text-input--underbar {
+    color: red;
+}
+
+.btn-space {
+    background-color: rgba(255, 255, 255, .06);
+    margin: 10px auto;
+    padding: 30px 20px;
+    border-radius: 10px;
+    max-width: 90%;
+}
+
+
+/* ONBOARDING */
+
+#first>.page__content {
+    background: #eee !important;
+}
+
+#second>.page__content {
+    background: #eee !important;
+}
+
+#third>.page__content {
+    background: #eee !important;
+}
+
+.onboard-container {
+    padding: 35px;
+    color: #24333F;
+}
+
+.onboard-container>h1 {
+    font-size: 18px;
+    text-transform: none;
+    text-align: left;
+}
+
+.onboard-svg {
+    width: 300px;
+    padding: 25% 0 2% 0%;
+    margin: 0 auto;
+}
+
+.learn-svg {
+    padding-top: 40%;
+}
+
+.onboard-text {
+    font-size: 14px;
+    text-transform: none;
+}
+
+
+/* SIGNUP */
+
+.input-signup {
+    margin: 10px 5px;
+}
+
+.input-signup>label {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.agreeTerms {
+    font-size: 12px;
+    text-transform: none;
+    margin: 5px;
+}
+
+#create-account {
+    text-transform: none;
+    font-size: 18px;
+}
+
+.submit-button {
+    margin-top: 15px;
+}
+
+#skipSignup {
+    margin: 10px;
+    text-decoration: underline;
+    font-size: 12px;
+}
+
+.dialog-container {
+    background: #eee !important;
+    color: #252525;
+    text-transform: none;
+}
+
+
+/* PREVENTION */
+
+.prevention-card {
+    background: #fff;
+    border-radius: 5px;
+    margin: 15px;
+    padding: 20px;
+    color: #252525;
+}
+
+tr {
+    margin-top: 20px;
+    height: 150px;
+    padding: 5px;
+}
+
+tr.h2 {
+    font-size: 16px;
+}
+
+.prevention-text {
+    font-size: 12px;
+    text-transform: none;
+}
+
+.prevention-row {
+    border-bottom: 1px solid #ccc;
+}
+
+.covid-svg {
+    width: 80%;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 580px;
+    padding: 0;
+}
+
+.header {
+    color: #55565a;
+    font-size: 2.2em;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.todo {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 16px -6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 16%;
+    overflow: hidden;
+    padding: 1.5em;
+    margin: 25px 5px 0;
+    width: 500px;
+}
+
+.todomain {
+    background: rgb(255, 116, 75);
+    background: linear-gradient(180deg, rgba(255, 116, 75, 1) 0%, rgba(255, 45, 106, 1) 100%);
+    border-radius: 10px;
+    box-shadow: 0 0 16px -6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 30%;
+    overflow: hidden;
+    padding: 1.5em;
+    /* margin: 25px 5px 25px; */
+    padding-top: 45px;
+    padding-bottom: 45px;
+    margin-left: 25px;
+}
+
+.todomain2 {
+    background: rgb(20, 208, 131);
+    background: linear-gradient(180deg, rgb(17, 224, 138) 0%, rgb(57, 218, 129) 100%);
+    border-radius: 10px;
+    box-shadow: 0 0 16px -6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 30%;
+    overflow: hidden;
+    padding: 1.5em;
+    /* margin: 25px 5px 25px; */
+    margin: 25px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+.todosec {
+    background-color: transparent;
+    border-radius: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+    flex: 10 1 30%;
+    overflow: hidden;
+    /* margin: 25px 5px 0; */
+    width: 500px;
+    padding-left: 50px;
+    overflow: hidden;
+    padding-top: 30px;
+}
+
+.todosec1 {
+    background-color: transparent;
+    border-radius: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: none;
+    display: flex;
+    flex-direction: column;
+    flex: 10 1 30%;
+    overflow: hidden;
+    /* margin: 25px 5px 0; */
+    width: 500px;
+    padding-left: 50px;
+    overflow: hidden;
+    padding-top: 30px;
+}
+
+.todo::after {
+    bottom: -5px;
+    color: #f3f3f3;
+    font-family: "Font Awesome 5 Free";
+    font-size: 7em;
+    position: absolute;
+    right: 0px;
+    transform: rotate(-30deg);
+}
+
+.todomain::after {
+    bottom: -5px;
+    color: #f3f3f3;
+    font-family: "Font Awesome 5 Free";
+    font-size: 7em;
+    position: absolute;
+    right: 0px;
+    transform: rotate(-30deg);
+}
+
+.todo--emergency .todo__amount {
+    color: #a0302f;
+}
+
+.todo--emergency::after {
+    content: "\f024";
+}
+
+.todo--remaining .todo__amount {
+    color: #2f429e;
+}
+
+.todo--remaining::after {
+    content: "\f14a";
+}
+
+.todo--current .todo__amount {
+    color: #d29037;
+}
+
+.todo--current::after {
+    content: "\f007";
+}
+
+.todo--finished .todo__amount {
+    color: #fff;
+    margin-top: -10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.todo--finished .todo__amountc {
+    color: #fff;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.todo__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.todomain__container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.todo__amount {
+    margin: 15px 0;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.todomain__amount {
+    margin: 0;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.todo__link {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    margin-top: 15px;
+    width: fit-content;
+    text-transform: initial;
+}
+
+.todo__linkc {
+    color: rgba(255, 255, 255, .8);
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    margin-top: 0px;
+    width: fit-content;
+    text-transform: initial;
+}
+
+.todomain__link {
+    color: #2f429e;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    margin: 0;
+    width: fit-content;
+}
+
+#msgSpace {
+    color: #f8f8f8;
+    /* margin-top: 20px; */
+    font-size: 15px;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+    padding: 0px 0 15px 0px;
+    text-transform: initial;
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: 15px;
+}
+
+#titletext {
+    color: #f8f8f8;
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+    padding: 25px 0 0px 25px;
+    text-transform: initial;
+}
+
+
+/* PREFERENCES PAGE */
+
+.pref-container {
+    padding: 20px;
+}
+
+
+/*=======*/
+
+
+/* MODAL */
+
+.modal-container {
+    background: #eee;
+    color: #252525;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+}
+
+.h2-border {
+    border-bottom: 1px solid #9cc22c;
+}
+
+.modal-head {
+    font-weight: 700;
+}
+
+.modal>p {
+    font-size: 16px;
+}
+
+.country-top {
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    width: 90%;
+}
+
+.refresh-btn {
+    height: 46px;
+    width: 46px;
+    /* border: 1px solid #fff; */
+    color: #333;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 50%;
+    float: right;
+    font-size: 18px;
+}

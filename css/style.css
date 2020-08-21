@@ -1,0 +1,23 @@
+.device-wrapper {
+    margin: 0 auto;
+    position: relative;
+    top: 1vh;
+    min-width: 485px;
+    z-index: 100;
+}
+
+.device {
+    z-index: 100;
+}
+
+body {
+    background: #2e4050;
+}
+
+.screen {
+    z-index: -1;
+}
+
+body {
+    overflow: visible;
+}
